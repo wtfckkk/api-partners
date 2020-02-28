@@ -1,0 +1,106 @@
+{
+	"info": {
+		"_postman_id": "4fda5ac0-fdba-4ad8-9f86-2042f4db0213",
+		"name": "api-partners",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "New Partner",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"tradingName\": \"Adega da Cerveja - Pinheiros\",\n        \"ownerName\": \"Zé da Silva\",\n        \"document\": \"1432132123891/0001\",\n        \"coverageArea\": { \n          \"type\": \"MultiPolygon\", \n          \"coordinates\": [\n            [[[30, 20], [45, 40], [10, 40], [30, 20]]], \n            [[[15, 5], [40, 10], [10, 20], [5, 10], [15, 5]]]\n          ]\n        },\n        \"address\": { \n          \"type\": \"Point\",\n          \"coordinates\": [-46.57421, -21.785741]\n        }\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}/partners/",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"partners",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Nearest Partner",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"coordinates\":  [-45.853745, -23.182152]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}/partners/nearest/",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"partners",
+						"nearest",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Partner",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{localhost}}/partners/38/",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"partners",
+						"38",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"id": "4e8f98a6-8267-49fa-8a1f-6259a0e217e3",
+			"key": "localhost",
+			"value": "localhost:8070",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
