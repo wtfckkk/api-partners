@@ -1,4 +1,4 @@
-Django==2.2.10
+Django==2.2.13
 django-mysql==2.4.1
 djangorestframework==3.9.1
 drf-nested-routers==0.91
